@@ -7,7 +7,22 @@ def rolar_dados(n):
     return lista
 
 def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
-    valor = dados_no_estoque[dado_para_remover]
-    dados_no_estoque.pop(dado_para_remover)
-    dados_rolados.append(valor)
-    return [dados_rolados, dados_no_estoque]
+     valor = dados_no_estoque[dado_para_remover]
+     dados_no_estoque.pop(dado_para_remover)
+     dados_rolados.append(valor)
+     return [dados_rolados, dados_no_estoque]
+
+
+def calcula_pontos_regra_simples(lista):
+    pontuacao = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+    for dado in lista:
+        if dado in pontuacao:
+            pontuacao[dado] += dado
+    return pontuacao
+
+
+def calcula_pontos_soma(lista):
+    total = 0
+    for valor in lista:
+        total += valor
+    return total

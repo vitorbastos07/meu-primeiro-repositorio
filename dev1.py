@@ -73,3 +73,4 @@ def calcula_pontos_quadra(lista):
             contagem[dado] += 1
         else:
             contagem[dado] = 1
+    return 0

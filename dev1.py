@@ -66,7 +66,7 @@ def calcula_pontos_full_house(lista):
     else:
         return 0
     
-   def calcula_pontos_quadra(lista):
+def calcula_pontos_quadra(lista):
     contagem = {}
     for dado in lista:
         if dado in contagem:

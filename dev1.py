@@ -65,3 +65,24 @@ def calcula_pontos_full_house(lista):
         return soma
     else:
         return 0
+    
+   def calcula_pontos_quadra(lista):
+    contagem = {}
+    for dado in lista:
+        if dado in contagem:
+            contagem[dado] += 1
+        else:
+            contagem[dado] = 1
+
+def calcula_pontos_quina(lista):
+    contagem = {}
+    for dado in lista:
+        if dado in contagem:
+            contagem[dado] += 1
+        else:
+            contagem[dado] = 1
+
+    for quantidade in contagem.values():
+        if quantidade >= 5:
+            return 50
+    return 0

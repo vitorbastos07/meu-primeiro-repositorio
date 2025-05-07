@@ -91,3 +91,23 @@ def calcula_pontos_quina(lista):
         if quantidade >= 5:
             return 50
     return 0
+
+def calcula_pontos_regra_avancada(lista):
+    return {
+        'cinco_iguais': calcula_pontos_quina(lista),
+        'full_house': calcula_pontos_full_house(lista),
+        'quadra': calcula_pontos_quadra(lista),
+        'sem_combinacao': calcula_pontos_soma(lista),
+        'sequencia_alta': calcula_pontos_sequencia_alta(lista),
+        'sequencia_baixa': calcula_pontos_sequencia_baixa(lista)
+    }
+
+def faz_jogada(dados, categoria, cartela_de_pontos):
+    if str(categoria) in ['1', '2', '3', '4', '5', '6']:
+        categoria_num = int(categoria)
+        pontos = calcula_pontos_regra_simples(dados)[categoria_num]
+        cartela_de_pontos['regra_simples'][categoria_num] = pontos
+    else:
+        pontos = calcula_pontos_regra_avancada(dados)[categoria]
+        cartela_de_pontos['regra_avancada'][categoria] = pontos
+    return cartela_de_pontos
